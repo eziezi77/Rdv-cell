@@ -1,127 +1,217 @@
-<!DOCTYPE html>
+
+     <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TPQ HIDAYATTUTAINI</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #006400, #ffffff); /* hijau zamrud ke putih */
-      color: #222;
+      background: linear-gradient(to bottom right, #006a4e 70%, #ffffff 100%);
+      color: #1a1a1a;
     }
 
     header {
-      background: #0b3d91;
+      background-color: #004d99;
       color: white;
-      padding: 10px 20px;
       display: flex;
       align-items: center;
-      gap: 15px;
+      padding: 12px 20px;
+      border-bottom: 4px solid #ffc107;
     }
 
     header img {
-      height: 60px;
-      border-radius: 8px;
+      height: 65px;
+      margin-right: 15px;
+      border-radius: 10px;
+      background-color: white;
     }
 
-    .slogan {
-      background: #fffbe6;
-      margin: 20px auto;
-      padding: 15px;
-      max-width: 90%;
-      border: 2px solid gold;
-      border-radius: 10px;
+    .title-box h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .title-box small {
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .section-divider {
+      height: 4px;
+      background: linear-gradient(to right, #004d99, #ffc107, #004d99);
+      margin: 20px 0;
+    }
+
+    .hero {
       text-align: center;
-      font-weight: bold;
-      color: goldenrod;
-      font-size: 1.2em;
+      padding: 40px 10px;
+      position: relative;
+    }
+
+    .hero .slogan-box {
+      max-width: 90%;
+      margin: auto;
+      border: 3px solid gold;
+      border-radius: 15px;
+      padding: 30px 15px;
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
       position: relative;
       overflow: hidden;
     }
 
-    .slogan::after {
-      content: "";
-      background: url('https://upload.wikimedia.org/wikipedia/commons/2/28/Stars_animation.gif');
-      opacity: 0.15;
+    .hero h2 {
+      margin: 0;
+      font-size: 22px;
+      color: #ffd700;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .stars {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 300%;
+      background: url('https://i.ibb.co/gm9SZPY/stars.gif') repeat;
+      animation: animateStars 60s linear infinite;
+      opacity: 0.07;
       z-index: 0;
     }
 
-    .slogan span {
+    @keyframes animateStars {
+      0% { background-position: 0 0; }
+      100% { background-position: -1000px -1000px; }
+    }
+
+    .hero .slogan-box * {
       position: relative;
       z-index: 1;
     }
 
-    main {
-      padding: 20px;
+    .center-logo {
+      text-align: center;
+      margin: 20px 0;
     }
 
-    section {
-      background: white;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 90%;
-      border-radius: 8px;
+    .center-logo img {
+      width: 120px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .welcome {
+      max-width: 750px;
+      margin: auto;
+      padding: 30px 25px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 16px;
+      font-family: 'Georgia', serif;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+
+    .welcome h3 {
+      text-align: center;
+      font-family: 'Scheherazade', 'Georgia', serif;
+      font-size: 24px;
+      color: gold;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .welcome .highlight {
+      color: #ffffff;
+      font-weight: bold;
+      text-shadow: 0 0 3px #ffcc00;
+    }
+
+    .contact {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .contact a {
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .address {
+      text-align: center;
+      color: #eeeeee;
+      font-size: 14px;
+      margin-bottom: 25px;
     }
 
     footer {
+      background-color: #003366;
+      color: white;
       text-align: center;
       padding: 15px;
-      background: #0b3d91;
-      color: white;
-      font-size: 0.9em;
-    }
-
-    a {
-      color: limegreen;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .divider {
-      border-top: 4px solid gold;
-      margin: 30px auto;
-      width: 90%;
+      font-size: 13px;
+      border-top: 3px solid #ffc107;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://raw.githubusercontent.com/eziezi77/Rdv-cell/main/IMG-20250621-WA0005.jpg" alt="Logo TPQ">
-    <div>
-      <h1 style="margin:0;">TPQ HIDAYATTUTAINI</h1>
+    <img src="IMG-20250621-WA0005.jpg" alt="Logo TPQ">
+    <div class="title-box">
+      <h1>TPQ HIDAYATTUTAINI</h1>
       <small>Menanam Cahaya Al-Qur’an Sejak Dini</small>
     </div>
   </header>
 
-  <div class="slogan">
-    <span>Menyemai Cinta Al-Qur’an,<br>Menumbuhkan Akhlak & Keikhlasan</span>
+  <div class="section-divider"></div>
+
+  <div class="hero">
+    <div class="slogan-box">
+      <div class="stars"></div>
+      <h2>Menyemai Cinta Al-Qur’an,</h2>
+      <h2>Menumbuhkan Akhlak & Keikhlasan</h2>
+    </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="section-divider"></div>
 
-  <main>
-    <section>
-      <h2>Selamat Datang di TPQ HIDAYATTUTAINI</h2>
-      <p>Kami adalah lembaga pendidikan Qur’an yang membimbing anak-anak sejak dini dengan cinta Al-Qur’an, membentuk karakter islami, dan menanamkan nilai akhlak serta keikhlasan.</p>
-      <p>Website ini sedang dalam pengembangan. Nantinya akan ditambahkan informasi lengkap seperti jadwal kegiatan, program tahfidz, dokumentasi foto, dan formulir pendaftaran santri baru. Silakan yang ingin menambahkan info bisa langsung melalui grup TPQ ini. Terima kasih.</p>
-      <p><strong>Alamat:</strong> RT 2 RW 2 Lingk. Tlogowono, Kel. Tlogorejo, Kec. Temanggung</p>
-    </section>
-  </main>
+  <div class="center-logo">
+    <img src="IMG-20250621-WA0005.jpg" alt="Logo Tengah">
+  </div>
+
+  <div class="welcome">
+    <h3>Selamat Datang di <span class="highlight">TPQ HIDAYATTUTAINI</span></h3>
+    <p>
+      Kami adalah lembaga pendidikan Qur’an yang membimbing anak-anak sejak dini dengan <strong>cinta Al-Qur’an</strong>, membentuk karakter islami, dan menanamkan nilai <em>akhlak serta keikhlasan</em>.
+    </p>
+    <p>
+      Website ini sedang dalam pengembangan. Nantinya akan ditambahkan informasi lengkap seperti <u>jadwal kegiatan</u>, <u>program tahfidz</u>, <u>dokumentasi foto</u>, dan <u>formulir pendaftaran</u> santri baru.<br><br>
+      <strong>Bagi yang ingin menambahkan informasi atau dokumentasi kegiatan, silakan langsung berbagi melalui grup TPQ ini. Terima kasih.</strong>
+    </p>
+  </div>
+
+  <div class="address">
+    Alamat: RT 2 RW 2, Lingkungan Tlogowono, Kelurahan Tlogorejo, Kecamatan Temanggung
+  </div>
+
+  <div class="contact">
+    <a href="https://wa.me/6282220598562" target="_blank">Kontak WA: Bpk. Kisworo – 0822-2059-8562</a>
+  </div>
 
   <footer>
-    &copy; 2025 TPQ HIDAYATTUTAINI • Semua Hak Dilindungi
+    © 2025 TPQ HIDAYATTUTAINI • Semua Hak Dilindungi
   </footer>
 
 </body>
-</html>
+</html> 
