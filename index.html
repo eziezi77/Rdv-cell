@@ -2,133 +2,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RDV CELL | Station Service</title>
+  <title>RDV Cell - Landing Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at center, #020024 0%, #090979 35%, #000000 100%);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      min-height: 100vh;
-    }.logo {
-  font-size: 3rem;
-  color: gold;
-  background: darkred;
-  padding: 15px 35px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px gold;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }body, html {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-.logo img {
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 10;
+}
+
+nav img {
   height: 40px;
 }
 
-.slogan {
-  margin-top: 10px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: cyan;
-}
-
-.subtext {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-
-.menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+.nav-links {
+  list-style: none;
+  display: flex;
   gap: 20px;
-  width: 100%;
-  max-width: 900px;
-  margin-bottom: 30px;
 }
 
-.item {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  backdrop-filter: blur(3px);
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
   transition: 0.3s;
-  font-size: 1rem;
 }
 
-.item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+.nav-links li a:hover {
+  color: #00ffd5;
 }
 
-.contact {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #ddd;
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    flex-direction: column;
+    background: rgba(0,0,0,0.85);
+    width: 200px;
+    display: none;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+header {
   text-align: center;
+  padding: 80px 20px 40px;
+  color: white;
 }
 
-.buttons {
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: auto;
+  color: #eee;
+}
+
+.card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 20px;
+  padding: 40px 20px;
 }
 
-.button {
-  padding: 12px 25px;
-  background: #00bcd4;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 0 10px #00bcd4;
-  text-decoration: none;
-}
-
-.footer {
-  margin-top: 30px;
-  font-size: 0.85rem;
-  color: #aaa;
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: 0.3s;
 }
 
-a {
-  color: #00ffff;
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.card h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #00ffd5;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background: #00ffd5;
+  color: black;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #00c2a6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
   </style>
 </head>
-<body>
-  <div class="logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android Logo">
-    RDV CELL
+<body><video class="bg-video" autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+</video><nav>
+  <img src="logo.png" alt="Logo RDV Cell">
+  <ul class="nav-links">
+    <li><a href="#Dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+    <li><a href="produk.html"><i class="fas fa-box-open"></i> Produk</a></li>
+    <li><a href="galeri.html"><i class="fas fa-image"></i> Galeri</a></li>
+    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+    <li><a href="kontak.html"><i class="fab fa-whatsapp"></i> Kontak</a></li>
+
+</ul>
+  <div class="burger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
   </div>
-  <div class="slogan">CELL COMP</div>
-  <div class="subtext">Station Service Android & Laptop</div>  <div class="menu">
-    <div class="item">🔧 Servis HP, Laptop, PC, TV</div>
-    <div class="item">🛠 Software & Hardware Bergaransi</div>
-    <div class="item">📱 Isi Pulsa (All Operator)</div>
-    <div class="item">🌐 Paket Data (All Operator)</div>
-    <div class="item">🎫 Voucher</div>
-    <div class="item">🔌 Accessories</div>
-  </div>  <div class="contact">
-    📞 Contact: <a href="https://wa.me/62816692887" target="_blank">+62 816-692-887</a><br/>
-    📍 Lokasi: <a href="https://maps.app.goo.gl/Ji13hzxspcMpp12FA" target="_blank">Lihat di Google Maps</a>
-  </div>  <div class="buttons">
-    <a class="button" href="https://wa.me/62816692887" target="_blank">Hubungi via WhatsApp</a>
-    <a class="button" href="https://maps.app.goo.gl/Ji13hzxspcMpp12FA" target="_blank">📍 Buka Lokasi</a>
-  </div>  <div class="footer">© 2025 RDV CELL. All Rights Reserved.</div>
-</body>
-            </html>
+</nav><header>
+  <h1>Selamat Datang di RDV Cell</h1>
+  <p>Pusat layanan terpercaya untuk servis Android, laptop, dan perangkat digital lainnya. Cepat, profesional, dan bergaransi!</p>
+</header><section class="card-container" id="layanan">
+  <div class="card">
+    <h3>Servis Android</h3>
+    <p>Perbaikan cepat, ganti LCD, baterai, software, unlock, dll.</p>
+  </div>
+  <div class="card">
+    <h3>Servis Laptop</h3>
+    <p>Dari install ulang hingga penggantian hardware. Siap semua merek!</p>
+  </div>
+  <div class="card">
+    <h3>Custom Tools</h3>
+    <p>Tool hacking, bypass, pelaporan, klaim otomatis, dll sesuai permintaan.</p>
+  </div>
+</section><footer>
+  © RDV Cell 2010 - 2025
+</footer><script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+</script></body>
+</html>
