@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - RDV Cell</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #00ffd5;
+    }
+
+    .faq-container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .accordion {
+      background-color: rgba(255,255,255,0.1);
+      color: #fff;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1em;
+      transition: 0.4s;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .active, .accordion:hover {
+      background-color: rgba(0, 255, 213, 0.2);
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: rgba(255,255,255,0.05);
+      display: none;
+      overflow: hidden;
+    }
+
+    .form-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #00ffd5;
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .back-btn {
+      margin: 20px;
+      display: inline-block;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #00ffd5;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #00ffd5;
+      color: black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+</video>
+
+<header>
+  <h1><i class="fas fa-question-circle"></i> Tanya Jawab (FAQ)</h1>
+</header>
+
+<div class="faq-container">
+  <button class="accordion"><i class="fas fa-tools"></i> Apa layanan utama RDV Cell?</button>
+  <div class="panel"><p>Kami menyediakan layanan servis Android, laptop, tv, dan custom request lainnya.</p></div>
+
+  <button class="accordion"><i class="fas fa-shield-alt"></i> Apakah layanan bergaransi?</button>
+  <div class="panel"><p>Ya,sesuai jenis servis yang dilakukan.</p></div>
+
+  <button class="accordion"><i class="fas fa-clock"></i> Berapa lama proses servis?</button>
+  <div class="panel"><p>Tergantung kerusakan.</p></div>
+
+  <button class="accordion"><i class="fas fa-phone-alt"></i> Bagaimana cara menghubungi kami?</button>
+  <div class="panel"><p>Silakan hubungi kami melalui WhatsApp,atau datang langsung ke counter kami.</p></div>
+</div>
+
+<div class="form-section">
+  <h2><i class="fas fa-envelope"></i> Kirim Pertanyaanmu</h2>
+  <form action="https://formsubmit.co/rdvcell999@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="nama" placeholder="Nama Anda" required>
+    <input type="email" name="email" placeholder="Email Anda (opsional)">
+    <textarea name="pertanyaan" rows="5" placeholder="Tulis pertanyaan di sini..." required></textarea>
+    <button type="submit">Kirim Pertanyaan</button>
+  </form>
+</div>
+
+<div style="text-align: center;">
+  <a href="index.html#faq" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+</div>
+
+<footer>
+  © RDV Cell 2010 - 2025
+</footer>
+
+<script>
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    });
+  }
+</script>
+
+</body>
+</html>

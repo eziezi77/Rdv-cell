@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galeri - RDV Cell</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: -2;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      height: 40px;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .nav-links li a:hover {
+      color: #00ffd5;
+    }
+
+    .back-button {
+      margin: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      border: 1px solid #00ffd5;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: #00ffd5;
+      color: black;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .gallery-item video,
+    .gallery-item img {
+      width: 100%;
+      display: block;
+    }
+
+    .icon-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.7);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      color: #00ffd5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      font-size: 0.9em;
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+</video>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="Logo"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#Dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+    <li><a href="index.html#produk"><i class="fas fa-box-open"></i> Produk</a></li>
+    <li><a href="galeri.html"><i class="fas fa-image"></i> Galeri</a></li>
+    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+  </ul>
+</nav>
+
+<a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+
+<header>
+  <h1><i class="fas fa-image"></i> Galeri RDV Cell</h1>
+  <p>Lihat koleksi foto dan video terbaik kami</p>
+</header>
+
+<section class="gallery">
+  <!-- 5 Video -->
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-video"></i> Video</div><video controls src="video1.mp4"></video></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-video"></i> Video</div><video controls src="video2.mp4"></video></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-video"></i> Video</div><video controls src="video3.mp4"></video></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-video"></i> Video</div><video controls src="video4.mp4"></video></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-video"></i> Video</div><video controls src="video5.mp4"></video></div>
+
+  <!-- 10 Foto -->
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto1.jpg" alt="Foto 1"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto2.jpg" alt="Foto 2"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto3.jpg" alt="Foto 3"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto4.jpg" alt="Foto 4"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto5.jpg" alt="Foto 5"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto6.jpg" alt="Foto 6"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto7.jpg" alt="Foto 7"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto8.jpg" alt="Foto 8"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto9.jpg" alt="Foto 9"></div>
+  <div class="gallery-item"><div class="icon-tag"><i class="fas fa-camera"></i> Foto</div><img src="foto10.jpg" alt="Foto 10"></div>
+</section>
+
+<footer>
+  © RDV Cell 2010 - 2025
+</footer>
+
+</body>
+</html>

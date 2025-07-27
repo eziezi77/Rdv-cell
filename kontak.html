@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - RDV Cell</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+      background: black;
+    }
+
+    video.bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .kontak-container {
+      padding: 60px 20px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #00ffd5;
+    }
+
+    .kontak-info {
+      margin-top: 30px;
+      font-size: 1.2em;
+    }
+
+    .kontak-info a {
+      color: #00ffd5;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      display: inline-block;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #00ffd5;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #00ffd5;
+      color: black;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<video class="bg" autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+</video>
+
+<div class="kontak-container">
+  <h1><i class="fas fa-phone-alt"></i> Hubungi Kami</h1>
+
+  <div class="kontak-info">
+    <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/62816692887" target="_blank">+62 812-3456-7890</a></p>
+    <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/rdvcell" target="_blank">@rdvcell</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> Alamat: Jl.</p>
+  </div>
+
+  <a href="index.html#kontak" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+</div>
+
+<footer>
+  © RDV Cell 2010 - 2025
+</footer>
+
+</body>
+</html>
